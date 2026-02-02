@@ -1,27 +1,42 @@
-def A():
-    year=eval(input(" enter year :"))
+import calendar
+def get_year():
+     return int(input(" enter year :"))
+def A(year):
+   
     rem=year%100
-    y=rem%4
+   
 
-    return year,y
+    return rem
+def A1(rem):
+    x=rem%4
+    return x
+
     
-def B(year,y):
+def B(y):
     if y==1:
-        return(" calender of this year repeat after 6 years that is",year+6)
+        c=6
+        return c
+       
     elif y==2:
-        return(" calender repeat after 11years that is",year+11)
+        c==11
+        return c
+        
     elif y==3:
-       return(" calender repeat after 11 years that is",year+11)
+       c=11
+       return c
     elif y==0:
-       return(" calender repeat after 11 years that is",year+28)
+        c=11
+        return c
     else:
-       return(" wrong")
 
-year,y=A()
-# print(year,y)
-b=B(year,y)
-print(b)
-
+       return "wrong"
+def cal(c,year):
+   next_year=c+year
+   print("Calendar of the year u entered : ",calendar.calendar(year),"\nCalendar of the next same calendar year : ",calendar.calendar(next_year))
 
 
-
+year=get_year()
+rem=A(year)
+y=A1(rem)
+c=B(y)
+cal(c,year)
